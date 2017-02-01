@@ -1,0 +1,16 @@
+{
+  "name": "techelp",
+  "version": "0.0.1",
+  "description": "A chatbot for Tec de Monterrey students",
+  "main": "index.js",
+  "dependencies": {
+    "botpress": "0.x",
+    "botpress-messenger": "^1.0.17"
+  },
+  "scripts": {
+    "start": "botpress start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Enrique Barragan",
+  "license": "AGPL-3.0"
+}
