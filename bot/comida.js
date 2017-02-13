@@ -45,7 +45,7 @@ module.exports = function (bp) {
     });
 
     bp.hear(/foodbox/i, (event,next) => {
-      bp.messenger.sendText(event.user.id, 'Excelentes hamburguesas. Abierto de 9:00 a 18:00 entre semana, los sábados de 8:00 a 16:00.')
+      bp.messenger.sendText(event.user.id, 'Hamburguesas, alitas y más. Abierto de 9:00 a 18:00 entre semana, los sábados de 8:00 a 16:00.')
       const centralesPayload = {
         template_type: "generic",
         elements: [
