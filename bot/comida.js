@@ -53,7 +53,7 @@ const aunMasOpcionesPayload = {
         },
         {
             type: "postback",
-            payload: "GORDITAS",
+            payload: "GORDITA",
             title: "Gorditas"
         },
         {
@@ -66,6 +66,51 @@ const aunMasOpcionesPayload = {
 
 module.exports = function (bp) {
   // Comida
+
+    bp.hear(/subway/i, (event, next) => {
+      const subwayPayload = {
+        template_type: "generic",
+        elements: [
+          {
+            "title":"Subway",
+            "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.65151739004201,-100.28898060321808&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
+            "subtitle":"Se encuentra dentro de Centrales",
+            buttons: [
+              {
+                  type: "web_url",
+                  url: "https://goo.gl/maps/MiJTnAhpNwL2",
+                  title: "Direcciones"
+              }
+            ]
+          }
+        ]
+      }
+      bp.messenger.sendText(event.user.id, "Abierto de 9:00 - 22:30 todos los días.");
+      bp.messenger.sendTemplate(event.user.id, subwayPayload);
+    });
+
+    bp.hear(/CupTime/i, (event, next) => {
+      const cuptimePayload = {
+        template_type: "generic",
+        elements: [
+          {
+            "title":"CupTime",
+            "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.648857,-100.290270&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
+            "subtitle":"En el sótano del Centro Estudiantil",
+            buttons: [
+              {
+                  type: "web_url",
+                  url: "https://goo.gl/maps/mQ92dv6uhAk",
+                  title: "Direcciones"
+              }
+            ]
+          }
+        ]
+      }
+      bp.messenger.sendText(event.user.id, "Abierto de 6:00 - 22:00 los lunes, miércoles y viernes, de 6:00 - 23:00 martes y viernes y de 7:00 - 15:00 los sábados.");
+      bp.messenger.sendTemplate(event.user.id, cuptimePayload);
+    })
+
     bp.hear(/centrales/i, (event,next) => {
       bp.messenger.sendText(event.user.id, 'Abierto las 24 horas, comida de cafetería.')
       const centralesPayload = {
@@ -106,7 +151,7 @@ module.exports = function (bp) {
           }
         ]
       }
-      bp.messenger.sendText("Abierto de 7:00 a 20:00 de lunes a viernes. Los sábados de 7:00 a 12:00");
+      bp.messenger.sendText(event.user.id, "Abierto de 7:00 a 20:00 de lunes a viernes. Los sábados de 7:00 a 12:00");
       bp.messenger.sendTemplate(event.user.id, starbucksPayload);
     });
 
@@ -216,12 +261,78 @@ module.exports = function (bp) {
           }
         ]
       }
-      bp.messenger.sendText("Abierto de 7:00 a 21:00 de lunes a viernes.");
+      bp.messenger.sendText(event.user.id, "Abierto de 7:00 a 21:00 de lunes a viernes.");
       bp.messenger.sendTemplate(event.user.id, oxxoPayload);
+    });
+
+    bp.hear(/gordita/i, (event, next) => {
+      const gorditaPayload = {
+        template_type: "generic",
+        elements: [
+          {
+            "title":"Gorditas Doña Tota",
+            "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.651465406034394,-100.28895914554596&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
+            "subtitle":"Se encuentra dentro de Centrales",
+            buttons: [
+              {
+                  type: "web_url",
+                  url: "https://goo.gl/maps/f5wXapyJcys",
+                  title: "Direcciones"
+              }
+            ]
+          }
+        ]
+      }
+      bp.messenger.sendText(event.user.id, "Abierto de 7:00 a 19:00 de lunes a viernes.");
+      bp.messenger.sendTemplate(event.user.id, gorditaPayload);
+    });
+
+    bp.hear(/wok/i, (event, next) => {
+      const wokPayload = {
+        template_type: "generic",
+        elements: [
+          {
+            "title":"Fusion Wok",
+            "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.651514,-100.288867&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
+            "subtitle":"Se encuentra dentro de Centrales",
+            buttons: [
+              {
+                  type: "web_url",
+                  url: "https://goo.gl/maps/KrXCFwqPEqP2",
+                  title: "Direcciones"
+              }
+            ]
+          }
+        ]
+      }
+      bp.messenger.sendText(event.user.id, "Wok. Abierto de 7:00 a 19:00 de lunes a viernes.");
+      bp.messenger.sendTemplate(event.user.id, wokPayload);
     });
 
     bp.hear(/comer/i, (event, next) => {
       bp.messenger.sendTemplate(event.user.id, comerPayload);
+    });
+
+    bp.hear(/salad/i, (event, next) => {
+      const superSaladspayload = {
+        template_type: "generic",
+        elements: [
+          {
+            "title":"Super Salads",
+            "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.652281431447857,-100.28944730758667&zoom=18&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
+            "subtitle":"Se encuentra bajando las escaleras que están a un lado de Aulas 1.",
+            buttons: [
+              {
+                  type: "web_url",
+                  url: "https://goo.gl/maps/915Jnki1mhx",
+                  title: "Direcciones"
+              }
+            ]
+          }
+        ]
+      }
+      bp.messenger.sendText(event.user.id, "Abierto de 11:00 a 17:00 hrs de lunes a viernes");
+      bp.messenger.sendTemplate(event.user.id, superSaladspayload);
     });
 
     bp.hear(/AUN_MAS_OPCIONES_COMIDA/i, (event, next) => {
@@ -260,7 +371,7 @@ module.exports = function (bp) {
     bp.hear(/hamburguesa/i, (event, next) => {
       const hamburguesasPayload = {
         template_type: "button",
-            text: "Tenemos estas opciones de Hamburguesas",
+            text: "Tenemos estas opciones de hamburguesas",
             buttons: [
               {
                   type: "postback",
@@ -276,4 +387,30 @@ module.exports = function (bp) {
       }
       bp.messenger.sendTemplate(event.user.id, hamburguesasPayload);
     });
+
+    bp.hear(/sandwich/i, (event, next) => {
+      const sandwichPayload = {
+        template_type: "button",
+            text: "Tenemos estas opciones de sandwiches",
+            buttons: [
+              {
+                  type: "postback",
+                  payload: "SUBWAY",
+                  title: "Subway"
+              },
+              {
+                  type: "postback",
+                  payload: "STARBUCKS",
+                  title: "Starbucks"
+              },
+              {
+                  type: "postback",
+                  payload: "CUPTIME",
+                  title: "CupTime"
+              }
+        ]
+      }
+      bp.messenger.sendTemplate(event.user.id, sandwichPayload);
+    });
+
 };
