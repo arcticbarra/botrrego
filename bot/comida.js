@@ -67,6 +67,32 @@ const aunMasOpcionesPayload = {
 module.exports = function (bp) {
   // Comida
 
+    bp.hear(/tacos/i, (event, next) => {
+      const tacosPayload = {
+        template_type: "generic",
+        elements: [
+          {
+          "title":"Tacos El Borrego",
+          "image_url":"https://maps.googleapis.com/maps/api/staticmap?autoscale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true&markers=size:mid|color:0xff0000|label:|25.6526799,-100.290017|25.650728,-100.288149",
+          "subtitle":"El banco se encuentra entre Foodbox y el Centro Estudiantil",
+          buttons: [
+            {
+                type: "web_url",
+                url: "https://goo.gl/maps/PNZdpxzdQN52",
+                title: "Jardin De Carreras"
+            },
+            {
+                type: "web_url",
+                url: "https://goo.gl/maps/PyuZ6TjrqP32",
+                title: "CIAP"
+            }
+          ]
+        }]
+      };
+      bp.messenger.sendText(event.user.id, "Tacos y Chilaquiles. Abierto de 8:00 a 16:00")
+      bp.messenger.sendTemplate(event.user.id, tacosPayload);
+    });
+
     bp.hear(/subway/i, (event, next) => {
       const subwayPayload = {
         template_type: "generic",
