@@ -1,6 +1,5 @@
 
 module.exports = {
-
   /**
   * where the content is stored
   * you can access this property from `bp.dataLocation`
