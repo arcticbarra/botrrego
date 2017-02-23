@@ -1,30 +1,5 @@
 module.exports = function(bp) {
 
-  bp.hear(/cajero/i, (event, next) => {
-    const cajeroPayload = {
-      template_type: "button",
-          text: "Qué cajero estás buscando?",
-          buttons: [
-            {
-                type: "postback",
-                title: "Santander",
-                payload: "SANTANDER"
-            },
-            {
-              type: "postback",
-              title: "Bancomer",
-              payload: "BANCOMER"
-            },
-            {
-              type: "postback",
-              title: "Más cajeros",
-              payload: "MORE_PAYLOAD"
-            }
-          ]
-    }
-    bp.messenger.sendTemplate(event.user.id, cajeroPayload);
-  });
-
   bp.hear(/MORE_PAYLOAD/i, (event, next) => {
     const cajeroPayload = {
       template_type: "button",
@@ -124,6 +99,31 @@ module.exports = function(bp) {
     }
     bp.messenger.sendText(event.user.id, "Hay dos cajeros. Abiertos las 24 horas.")
     bp.messenger.sendTemplate(event.user.id, banamexPayload);
+  });
+
+  bp.hear(/cajero/i, (event, next) => {
+    const cajeroPayload = {
+      template_type: "button",
+          text: "Qué cajero estás buscando?",
+          buttons: [
+            {
+                type: "postback",
+                title: "Santander",
+                payload: "SANTANDER"
+            },
+            {
+              type: "postback",
+              title: "Bancomer",
+              payload: "BANCOMER"
+            },
+            {
+              type: "postback",
+              title: "Más cajeros",
+              payload: "MORE_PAYLOAD"
+            }
+          ]
+    }
+    bp.messenger.sendTemplate(event.user.id, cajeroPayload);
   });
 
 };

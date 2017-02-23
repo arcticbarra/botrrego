@@ -63,6 +63,27 @@ module.exports = function(bp) {
     bp.messenger.sendTemplate(event.user.id, biotecPayload);
   });
 
+  bp.hear(/arizona/i, (event, next) => {
+    const biotecPayload = {
+      template_type: "generic",
+      elements: [
+        {
+          "title":"Edificio de Arquitectura",
+          "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.653182,-100.289190&zoom=18&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C25.653182,-100.289190",
+          "subtitle":"Edificio que se encuentra a un lado del estacionamiento E1. Ubicado en Av. Junco de la Vega.",
+          buttons: [
+            {
+                type: "web_url",
+                url: "https://www.google.com.mx/maps/place/25%C2%B039'11.5%22N+100%C2%B017'21.1%22W/@25.653182,-100.2897372,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d25.653182!4d-100.28919",
+                title: "Direcciones"
+            }
+          ]
+        }
+      ]
+    }
+    bp.messenger.sendTemplate(event.user.id, biotecPayload);
+  });
+
   bp.hear(/\D1/i, (event, next) => {
     const aulas1Payload = {
       template_type: "generic",
@@ -105,6 +126,72 @@ module.exports = function(bp) {
     }
     bp.messenger.sendText(event.user.id, "Para entender dónde está tu salón recuerda que el segundo dígito es el piso y los siguentes dos son el número del salón");
     bp.messenger.sendTemplate(event.user.id, aulas2Payload);
+  });
+
+  bp.hear(/\D3/i, (event, next) => {
+    const aulas3Payload = {
+      template_type: "generic",
+      elements: [
+        {
+          "title":"Aulas 3",
+          "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.649943352609153,-100.29021292928519&zoom=18&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C25.649943352609153,-100.29021292928519",
+          "subtitle":"Se encuentra a un lado de la biblioteca, enfrente de Food box.",
+          buttons: [
+            {
+                type: "web_url",
+                url: "https://goo.gl/maps/Nh9mFbKEmNu",
+                title: "Direcciones"
+            }
+          ]
+        }
+      ]
+    }
+    bp.messenger.sendText(event.user.id, "Para entender dónde está tu salón recuerda que el segundo dígito es el piso y los siguentes dos son el número del salón");
+    bp.messenger.sendTemplate(event.user.id, aulas3Payload);
+  });
+
+  bp.hear(/\D4/i, (event, next) => {
+    const aulas4Payload = {
+      template_type: "generic",
+      elements: [
+        {
+          "title":"Aulas 4",
+          "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.649636279905955,-100.28904631733894&zoom=18&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C25.649636279905955,-100.28904631733894",
+          "subtitle":"A un lado de Aulas 3. Enfrente del Centro Estudiantil",
+          buttons: [
+            {
+                type: "web_url",
+                url: "https://goo.gl/maps/XcPFR1sM74z",
+                title: "Direcciones"
+            }
+          ]
+        }
+      ]
+    }
+    bp.messenger.sendText(event.user.id, "Para entender dónde está tu salón recuerda que el segundo dígito es el piso y los siguentes dos son el número del salón");
+    bp.messenger.sendTemplate(event.user.id, aulas4Payload);
+  });
+
+  bp.hear(/\D6/i, (event, next) => {
+    const aulas6Payload = {
+      template_type: "generic",
+      elements: [
+        {
+          "title":"Aulas 6",
+          "image_url":"https://maps.googleapis.com/maps/api/staticmap?center=25.651524643770223,-100.28792232278647&zoom=18&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C25.651524643770223,-100.28792232278647",
+          "subtitle":"Se encuentra a un lado del Domo Acuático.",
+          buttons: [
+            {
+                type: "web_url",
+                url: "https://goo.gl/maps/XcPFR1sM74z",
+                title: "Direcciones"
+            }
+          ]
+        }
+      ]
+    }
+    bp.messenger.sendText(event.user.id, "Para entender dónde está tu salón recuerda que el segundo dígito es el piso y los siguentes dos son el número del salón");
+    bp.messenger.sendTemplate(event.user.id, aulas6Payload);
   });
 
   bp.hear(/\D7/i, (event, next) => {
