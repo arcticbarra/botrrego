@@ -51,7 +51,7 @@ module.exports = function(bp) {
             elements: [
                 {
                     "title": "TecStore",
-                    "image_url": "https://maps.googleapis.com/maps/api/staticmap?center=25.652153,25.652153&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
+                    "image_url": "https://maps.googleapis.com/maps/api/staticmap?center=25.652153,-100.289965&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
                     "subtitle": "Se encuentra en el sótano de la explanada del CIAP.",
                     buttons: [
                         {
@@ -63,7 +63,7 @@ module.exports = function(bp) {
                 }
             ]
         }
-        bp.messenger.sendTemplate(event.user.id, centralesPayload)
+        bp.messenger.sendTemplate(event.user.id, tecstoresPayload)
     });
 
     bp.hear(/Cat/i, (event, next) => {
@@ -110,7 +110,7 @@ module.exports = function(bp) {
         bp.messenger.sendTemplate(event.user.id, EdificioDafPayload);
     });
 
-    bp.hear(/Auditorio Luis Elizondo/i, (event, next) => {
+    bp.hear(/ale/i, (event, next) => {
         bp.messenger.sendText(event.user.id, 'Auditorio del Tec')
         const AuditorioLuisElizondoPayload = {
             template_type: "generic",
