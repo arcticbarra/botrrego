@@ -19,7 +19,7 @@ module.exports = function(bp) {
   comida(bp);
   cajeros(bp);
   aulas(bp);
-  edificios(bp);
+  //edificios(bp);
   bp.botDefaultResponse = event => {
      return bp.messenger.sendText(event.user.id, "Lo lamento, no entendí eso. Intenta preguntarme algo diferente")
    }
