@@ -176,6 +176,7 @@ module.exports = function(bp) {
         bp.messenger.sendTemplate(event.user.id, RectoriaPayload)
 
     });
+
     bp.hear(/CEDES/i, (event, next) => {
         bp.messenger.sendText(event.user.id, 'Es el edificio que se encuentra por residencias dentro del Tec. ')
         const CEDESPayload = {
@@ -220,6 +221,28 @@ module.exports = function(bp) {
         bp.messenger.sendTemplate(event.user.id, LocaTecPayload);
     });
 
+    bp.hear(/Punto Azul/i, (event, next) => {
+      bp.messenger.sendText(event.user.id, 'Está ubicado en el sótano de CETEC, aquí podrás realizar tus trámites administrativos.');
+      const PuntoazulPayload = {
+          template_type: "generic",
+          elements: [
+              {
+                  "title": "Punto Azul",
+                  "image_url": "https://maps.googleapis.com/maps/api/staticmap?center=25.6504462732722,-100.29093712588292&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
+                  "subtitle": "Se encuentra en el sótano de CETEC",
+                  buttons: [
+                      {
+                          type: "web_url",
+                          url: "https://goo.gl/maps/KB1SgFpZB6C2",
+                          title: "Direcciones"
+                      }
+                  ]
+                }
+              ]
+            }
+          bp.messenger.sendTemplate(event.user.id, PuntoazulPayload);
+      });
+
     // Broken
 
     // const cetecPayload = {
@@ -241,19 +264,10 @@ module.exports = function(bp) {
     //         }
     //     ]
     // }
-    // bp.hear(/Punto Azul/i, (event, next) => {
-    //     const PuntoazulPayload = {
-    //         template_type: "generic",
-    //         elements: [
-    //             {
-    //                 "title": "Punto Azul",
-    //                 "image_url": "https://maps.googleapis.com/maps/api/staticmap?center=25.6504462732722,-100.29093712588292&zoom=19&scale=false&size=600x300&maptype=roadmap&key=AIzaSyBOYAfqdxetXof7_OcKXUs-mwr6q9IX2Ck&format=png&visual_refresh=true",
-    //                 "subtitle": "Se encuentra en el sótano de CETEC",
-    //                 buttons: [
-    //                     {
-    //                         type: "web_url",
-    //                         url: "https://goo.gl/maps/KB1SgFpZB6C2",
-    //                         title: "Direcciones" bp.hear(/Áreas de computo/i, (event, next) => {
+
+    //
+    //
+    //                         bp.hear(/Áreas de computo/i, (event, next) => {
     //                             const aEPayload = {
     //                                 template_type: "generic",
     //                                 elements: [

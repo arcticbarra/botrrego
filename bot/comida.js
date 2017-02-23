@@ -203,7 +203,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, cedesComedorPayload);
     });
 
-    bp.hear(/foodbox/i, (event,next) => {
+    bp.hear(/food/i, (event,next) => {
       bp.messenger.sendText(event.user.id, 'Hamburguesas, alitas y más. Abierto de 9:00 a 18:00 entre semana, los sábados de 8:00 a 16:00.')
       const centralesPayload = {
         template_type: "generic",
@@ -401,7 +401,7 @@ module.exports = function (bp) {
             buttons: [
               {
                   type: "postback",
-                  payload: "FOODBOX",
+                  payload: "foodbox",
                   title: "Foodbox"
               },
               {
