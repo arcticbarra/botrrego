@@ -2,7 +2,7 @@ const comida = require('./bot/comida');
 const bancos = require('./bot/bancos');
 const cajeros = require('./bot/cajeros');
 const aulas = require('./bot/aulas');
-//const edificios = require('./bot/edificios');
+const edificios = require('./bot/edificios');
 
 module.exports = function(bp) {
 
@@ -19,7 +19,7 @@ module.exports = function(bp) {
   comida(bp);
   cajeros(bp);
   aulas(bp);
-  //edificios(bp);
+  edificios(bp);
   bp.botDefaultResponse = event => {
      return bp.messenger.sendText(event.user.id, "Lo lamento, no entendí eso. Intenta preguntarme algo diferente")
    }
