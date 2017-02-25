@@ -151,7 +151,7 @@ module.exports = function(bp) {
                 }
             ]
         }
-        bp.messenger.sendTemplate(event.user.id, BibliotecaPayload)
+        bp.messenger.sendTemplate(event.user.id, bibliotecaPayload)
     });
 
     bp.hear(/Rectoria/i, (event, next) => {

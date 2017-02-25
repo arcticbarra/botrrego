@@ -335,7 +335,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, wokPayload);
     });
 
-    bp.hear(/comer/i, (event, next) => {
+    bp.hear(/comer|comida/i, (event, next) => {
       bp.messenger.sendTemplate(event.user.id, comerPayload);
     });
 
