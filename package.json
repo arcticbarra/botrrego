@@ -4,10 +4,10 @@
   "description": "A chatbot for Tec de Monterrey students",
   "main": "index.js",
   "dependencies": {
-    "botpress": "0.x",
-    "botpress-messenger": "^1.0.17",
-    "botpress-rivescript": "^1.0.11",
-    "botpress-terminal": "^1.0.2"
+    "botpress": "lastest-0.1",
+    "botpress-messenger": "latest-0.1",
+    "botpress-rivescript": "latest-0.1",
+    "botpress-version-manager": "1.0.2"
   },
   "scripts": {
     "start": "botpress start",

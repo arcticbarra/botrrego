@@ -115,7 +115,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, subwayPayload);
     });
 
-    bp.hear(/CupTime/i, (event, next) => {
+    bp.hear(/CupTime|cup time/i, (event, next) => {
       const cuptimePayload = {
         template_type: "generic",
         elements: [
@@ -203,7 +203,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, cedesComedorPayload);
     });
 
-    bp.hear(/food/i, (event,next) => {
+    bp.hear(/food|box/i, (event,next) => {
       bp.messenger.sendText(event.user.id, 'Hamburguesas, alitas y más. Abierto de 9:00 a 18:00 entre semana, los sábados de 8:00 a 16:00.')
       const centralesPayload = {
         template_type: "generic",
@@ -225,7 +225,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, centralesPayload)
     });
 
-    bp.hear(/el camino/i, (event,next) => {
+    bp.hear(/el camino|truck/i, (event,next) => {
       bp.messenger.sendText(event.user.id, 'Hamburguesas. Abierto Martes y Jueves de 12:00 a 14:30 hrs.')
       const centralesPayload = {
         template_type: "generic",
@@ -291,7 +291,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, oxxoPayload);
     });
 
-    bp.hear(/gordita/i, (event, next) => {
+    bp.hear(/gordita|doña|tota/i, (event, next) => {
       const gorditaPayload = {
         template_type: "generic",
         elements: [
@@ -313,7 +313,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, gorditaPayload);
     });
 
-    bp.hear(/wok/i, (event, next) => {
+    bp.hear(/wok|fusion/i, (event, next) => {
       const wokPayload = {
         template_type: "generic",
         elements: [
@@ -335,7 +335,7 @@ module.exports = function (bp) {
       bp.messenger.sendTemplate(event.user.id, wokPayload);
     });
 
-    bp.hear(/comer|comida/i, (event, next) => {
+    bp.hear(/comer|comida|restaurant|hambre/i, (event, next) => {
       bp.messenger.sendTemplate(event.user.id, comerPayload);
     });
 
